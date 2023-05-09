@@ -18,6 +18,7 @@ qt_add_qml_module(appTap30pp
     QML_FILES qml/Main.qml
               qml/Splash.qml
               qml/App.qml
+              qml/components/RoundedImage.qml
     RESOURCES assets/tap30.png
 )
 
