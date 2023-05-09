@@ -4,26 +4,31 @@ import QtQuick.Controls
 
 ApplicationWindow {
     width: 489
-    height: 640
+    minimumWidth: 420
+    height: 800
     visible: true
     title: qsTr("Hello World!!!")
 
-    StackView {
-        id: stack
+    Rectangle {
         anchors.fill: parent
-        initialItem: splash
+        color: '#fff'
+        StackView {
+            id: stack
+            anchors.fill: parent
+            initialItem: splash
+        }
     }
 
     Component {
         id: splash
         Splash {
             timeout: 1000
-            onFinished: stack.replace(app)
+            onFinished: stack.replace(home)
         }
     }
 
     Component {
-        id: app
-        App {}
+        id: home
+        HomePage {}
     }
 }

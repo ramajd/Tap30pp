@@ -18,10 +18,16 @@ qt_add_qml_module(appTap30pp
     QML_FILES qml/Main.qml
               qml/Splash.qml
               qml/App.qml
+              qml/HomePage.qml
               qml/components/ImageButton.qml
               qml/components/RoundedImage.qml
               qml/components/ServiceItem.qml
     RESOURCES assets/tap30.png
+              assets/cars.png
+              assets/bike.png
+              assets/box.png
+              assets/travel.png
+              assets/ask-me.png
 )
 
 set_target_properties(appTap30pp PROPERTIES
