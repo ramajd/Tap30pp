@@ -23,7 +23,7 @@ Item {
                 bottomPadding: 24
                 Image {
                     width: 92; height: 24
-                    source: Qt.resolvedUrl("../assets/tap30.png")
+                    source: Qt.resolvedUrl("qrc:/assets/tap30.png")
                 }
             }
 
@@ -31,7 +31,7 @@ Item {
                 id: announcement
                 width: parent.width
                 ImageButton {
-                    source: "https://able-media.tapsi.cab/statics/2IOUVM0LG12B7DGH5H.jpg"
+                    source: Qt.resolvedUrl("qrc:/assets/announcement.jpg")
                     width: container.width
                     height: 40
                     radius: 8
@@ -66,28 +66,28 @@ Item {
 
                 ServiceItem {
                     title: qsTr("درخواست تپسی")
-                    image: Qt.resolvedUrl("../assets/cars.png")
+                    image: Qt.resolvedUrl("qrc:/assets/cars.png")
                     grayBackground: false
                     onClicked: console.log(title + ' clicked')
                 }
                 ServiceItem {
                     title: qsTr("پیک فوری")
-                    image: Qt.resolvedUrl("../assets/bike.png")
+                    image: Qt.resolvedUrl("qrc:/assets/bike.png")
                     onClicked: console.log(title + ' clicked')
                 }
                 ServiceItem {
                     title: qsTr("بین شهری")
-                    image: Qt.resolvedUrl("../assets/travel.png")
+                    image: Qt.resolvedUrl("qrc:/assets/travel.png")
                     onClicked: console.log(title + ' clicked')
                 }
                 ServiceItem {
                     title: qsTr("پیک اقتصادی")
-                    image: Qt.resolvedUrl("../assets/box.png")
+                    image: Qt.resolvedUrl("qrc:/assets/box.png")
                     onClicked: console.log(title + ' clicked')
                 }
                 ServiceItem {
                     title: qsTr("از من بپرس!")
-                    image: Qt.resolvedUrl("../assets/ask-me.png")
+                    image: Qt.resolvedUrl("qrc:/assets/ask-me.png")
                     isVertical: false
                     Layout.columnSpan: 2
                     onClicked: console.log(title + ' clicked')

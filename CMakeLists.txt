@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 project(Tap30pp VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_AUTORCC ON)
 
 find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
 
@@ -10,24 +11,12 @@ qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(appTap30pp
     src/main.cpp
+    resources.qrc
 )
 
 qt_add_qml_module(appTap30pp
     URI Tap30pp
     VERSION 1.0
-    QML_FILES qml/Main.qml
-              qml/Splash.qml
-              qml/App.qml
-              qml/HomePage.qml
-              qml/components/ImageButton.qml
-              qml/components/RoundedImage.qml
-              qml/components/ServiceItem.qml
-    RESOURCES assets/tap30.png
-              assets/cars.png
-              assets/bike.png
-              assets/box.png
-              assets/travel.png
-              assets/ask-me.png
 )
 
 set_target_properties(appTap30pp PROPERTIES

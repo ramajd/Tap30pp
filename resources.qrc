@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/ask-me.png</file>
+        <file>assets/bike.png</file>
+        <file>assets/box.png</file>
+        <file>assets/cars.png</file>
+        <file>assets/tap30.png</file>
+        <file>assets/travel.png</file>
+        <file>assets/announcement.jpg</file>
+        <file>qml/App.qml</file>
+        <file>qml/HomePage.qml</file>
+        <file>qml/Main.qml</file>
+        <file>qml/Splash.qml</file>
+        <file>qml/components/ImageButton.qml</file>
+        <file>qml/components/RoundedImage.qml</file>
+        <file>qml/components/ServiceItem.qml</file>
+    </qresource>
+</RCC>

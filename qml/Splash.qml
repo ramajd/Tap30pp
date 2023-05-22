@@ -11,7 +11,7 @@ Item {
 
         Image {
             id: logo
-            source: Qt.resolvedUrl("../assets/tap30.png")
+            source: Qt.resolvedUrl("qrc:/assets/tap30.png")
             anchors.centerIn: parent
         }
 
