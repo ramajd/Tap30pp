@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/Vazirmatn-VariableFont_wght.ttf</file>
+        <file>data.json</file>
+    </qresource>
+</RCC>
