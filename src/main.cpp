@@ -6,6 +6,7 @@
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
+    qputenv("QML_XHR_ALLOW_FILE_READ", QString("1").toUtf8());
 
     QTranslator translator;
     const QString locale = "fa_FA";

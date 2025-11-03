@@ -22,7 +22,7 @@ AdItem::AdItem(QObject *parent)
             qWarning() << "Failed to parse document: " << err.errorString();
         } else {
             auto home = doc.object().value("home").toObject();
-            auto ad = home.value("ad").toObject();
+            auto ad = home.value("header").toObject();
             setTitle(ad.value("title").toString());
             setSubTitle(ad.value("sub-title").toString());
             setImage(ad.value("image").toString());

@@ -1,6 +1,6 @@
 {
     "home": {
-        "ad": {
+        "header": {
             "title": "تا ۲ میلیون تومان اعتبار!",
             "sub-title": "تپسی بگیر\nسر ماه با دیجی‌پی پرداخت کن",
             "image": "qrc:/assets/ad.png",
@@ -8,6 +8,21 @@
                 "title": "دریافت اعتبار",
                 "url": "https://app.tapsi.cab/products/bnpl"
             }
-        }
+        },
+        "top-menu": [
+            { "title": "درخواست تپسی", "src": "qrc:/assets/ride-request.png", "badge": "جایزه آیفون" },
+            { "title": "سفارش غذا", "src": "qrc:/assets/superapp-food.png" },
+            { "title": "فروشگاه", "src": "qrc:/assets/dartil.png" }
+        ],
+        "menu": [
+            { "title": "ارسال بسته", "src": "qrc:/assets/delivery.png" },
+            { "title": "سوپر مارکت", "src": "qrc:/assets/supermarket.png" },
+            { "title": "پزشک و دارو", "src": "qrc:/assets/tapsi_doctor_fv.png" },
+            { "title": "بیمه", "src": "qrc:/assets/insurance.png" },
+            { "title": "اینترنت و شارژ", "src": "qrc:/assets/netandcharge.png" },
+            { "title": "خدمات خودرو", "src": "qrc:/assets/garage_tile.png", "badge": "خرید قسطی" },
+            { "title": "بین شهری", "src": "qrc:/assets/intercity.png" },
+            { "title": "ثبت نام راننده", "src": "qrc:/assets/become-a-driver.png" }
+        ]
     }
 }

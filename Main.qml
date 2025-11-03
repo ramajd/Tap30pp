@@ -16,7 +16,7 @@ ApplicationWindow {
 
     FontLoader {
         id: vazirFont
-        source: "qrc:///assets/Vazirmatn-VariableFont_wght.ttf"
+        source: "qrc:/assets/Vazirmatn-VariableFont_wght.ttf"
     }
 
     StackView {

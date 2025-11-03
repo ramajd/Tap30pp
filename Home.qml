@@ -9,7 +9,32 @@ import "./components"
 TpPage {
     id: root
 
+    Component.onCompleted: {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "qrc:/data.json");
+        xhr.send();
+        xhr.onload = () => {
+            const data = JSON.parse(xhr.responseText)
+            const homeData = data["home"]
+            topMenuModel.clear()
+            homeData["top-menu"].forEach((itm) => {
+                                             if (!itm.badge) itm.badge = ''
+                                             topMenuModel.append(itm)
+                                         })
+            menuModel.clear()
+            homeData["menu"].forEach(m => {
+                                         if (!m.badge) m.badge = ''
+                                         menuModel.append(m)
+                                     })
+
+        }
+    }
+
+    ListModel { id: topMenuModel }
+    ListModel { id: menuModel }
+
     header: AdItemView {}
+
 
     ColumnLayout {
         layoutDirection: Qt.RightToLeft
@@ -23,9 +48,14 @@ TpPage {
             Layout.margins: 10
             columns: 3
 
-            TpImageButton { title: 'درخواست تپسی'; imageSource: 'qrc:/assets/ride-request.png'; badge: 'جایزه آیفون' }
-            TpImageButton { title: 'سفارش غذا'; imageSource: 'qrc:/assets/superapp-food.png' }
-            TpImageButton { title: 'فروشگاه'; imageSource: 'qrc:/assets/dartil.png' }
+            Repeater {
+                model: topMenuModel
+                delegate: TpImageButton {
+                    title: model.title
+                    imageSource: model.src
+                    badge: model.badge
+                }
+            }
         }
 
         GridLayout {
@@ -35,22 +65,21 @@ TpPage {
             Layout.alignment: Qt.AlignTop
             columns: 4
 
-            TpImageButton { title: 'ارسال بسته'; imageSource: 'qrc:/assets/delivery.png' }
-            TpImageButton { title: 'سوپر مارکت'; imageSource: 'qrc:/assets/supermarket.png' }
-            TpImageButton { title: 'پزشک و دارو'; imageSource: 'qrc:/assets/tapsi_doctor_fv.png' }
-            TpImageButton { title: 'بیمه'; imageSource: 'qrc:/assets/insurance.png' }
-            TpImageButton { title: 'اینترنت و شارژ'; imageSource: 'qrc:/assets/netandcharge.png' }
-            TpImageButton { title: 'خدمات خودرو'; imageSource: 'qrc:/assets/garage_tile.png'; badge: 'خرید قسطی' }
-            TpImageButton { title: 'بین شهری'; imageSource: 'qrc:/assets/intercity.png' }
-            TpImageButton { title: 'ثبت نام راننده'; imageSource: 'qrc:/assets/become-a-driver.png' }
-            // TpImageButton { title: ''; imageSource: '' }
+            Repeater {
+                model: menuModel
+                delegate: TpImageButton {
+                    title: model.title
+                    imageSource: model.src
+                    badge: model.badge ? model.badge : ""
 
-
-
+                    Component.onCompleted: {
+                        console.log(model.badge)
+                    }
+                }
+            }
         }
 
         Item { Layout.fillHeight: true }
-
     }
 
 }
