@@ -2,5 +2,17 @@
     <qresource prefix="/">
         <file>assets/Vazirmatn-VariableFont_wght.ttf</file>
         <file>data.json</file>
+        <file>assets/ride-request.png</file>
+        <file>assets/ad.png</file>
+        <file>assets/dartil.png</file>
+        <file>assets/superapp-food.png</file>
+        <file>assets/become-a-driver.png</file>
+        <file>assets/delivery.png</file>
+        <file>assets/garage_tile.png</file>
+        <file>assets/insurance.png</file>
+        <file>assets/intercity.png</file>
+        <file>assets/netandcharge.png</file>
+        <file>assets/supermarket.png</file>
+        <file>assets/tapsi_doctor_fv.png</file>
     </qresource>
 </RCC>

@@ -18,10 +18,7 @@ Item {
 
     MouseArea {
         anchors.fill: parent
-        onClicked: {
-            console.log(adData.action)
-            Qt.openUrlExternally(adData.action)
-        }
+        onClicked: Qt.openUrlExternally("https://google.com")
     }
 
     RowLayout {

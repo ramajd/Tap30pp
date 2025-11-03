@@ -32,6 +32,7 @@ qt_add_qml_module(appTap30pp
     QML_FILES components/TpButton.qml
     QML_FILES components/TpPage.qml
     QML_FILES components/AdItemView.qml
+    QML_FILES components/TpImageButton.qml
 )
 
 qt_add_translations(appTap30pp
