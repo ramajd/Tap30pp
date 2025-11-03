@@ -20,7 +20,7 @@ TpPage {
             layoutDirection: Qt.RightToLeft
             Logo { size: 50 }
             TpLabel {
-                text: qsTr("tapsi")
+                text: qsTr("تپسی")
                 font.pointSize: 12
                 font.weight: Font.Medium
             }
@@ -31,17 +31,17 @@ TpPage {
             layoutDirection: Qt.RightToLeft
 
             TpLabel {
-                text: qsTr("Enter your mobile number")
+                text: qsTr("شماره موبایل خود را وارد کنید")
                 font.weight: Font.DemiBold
                 font.pointSize: 10
             }
 
             TpInput {
-                placeholderText: qsTr("phone number")
+                placeholderText: qsTr("شماره موبایل")
             }
 
             TpButton {
-                text: qsTr("get code")
+                text: qsTr("دریافت کد")
                 highlighted: true
                 onClicked: {
                     root.loggedIn()
