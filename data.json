@@ -26,13 +26,15 @@
         ],
         "ads": [
             {
-                "title": "با ۹۵ هزار تومان\nاشتراک فیلم‌نت بگیر",
-                "sub-title": "با کد تخفیف: BERETTA50",
-                "fg-color": "#000000",
-                "bg-color": "#D6D3D1",
-                "image": "qrc:/assets/ad1.png",
-                "action": "",
-                "action-title": ""
+                "title": "٪۶۰ تخفیف ویژه",
+                "sub-title": "ویزیت آنلاین پزشکی تپسی‌دکتر\nبا کد تخفیف: TPDR",
+                "fg-color": "#4C1D95",
+                "bg-color": "#95f9cf",
+                "image": "qrc:/assets/ad2.png",
+                "action": "qrc:/assets/ad.png",
+                "action-title": "شروع مشاوره",
+                "action-fg": "#312e81",
+                "action-bg": "#FFFFFF"
             },
             {
                 "title": "تا ۲ میلیون تومان اعتبار!",
@@ -41,9 +43,20 @@
                 "bg-color": "#DDD6FE",
                 "image": "qrc:/assets/ad.png",
                 "action": "qrc:/assets/ad.png",
-                "action1": "https://app.tapsi.cab/products/bnpl",
-                "action-title": "دریافت اعتبار"
+                "action-title": "دریافت اعتبار",
+                "action-fg": "#4338CA",
+                "action-bg": "#FFF7ED"
+            },
+            {
+                "title": "با ۹۵ هزار تومان\nاشتراک فیلم‌نت بگیر",
+                "sub-title": "با کد تخفیف: BERETTA50",
+                "fg-color": "#000000",
+                "bg-color": "#D6D3D1",
+                "image": "qrc:/assets/ad1.png",
+                "action": "",
+                "action-title": ""
             }
+
         ]
     }
 }

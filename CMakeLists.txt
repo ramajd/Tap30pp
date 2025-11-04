@@ -29,6 +29,7 @@ qt_add_qml_module(appTap30pp
     QML_FILES components/TpPage.qml
     QML_FILES components/AdItemView.qml
     QML_FILES components/TpImageButton.qml
+    QML_FILES components/AdBox.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

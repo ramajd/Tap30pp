@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Controls.Material
 import QtQuick.Layouts
+import QtQuick.Effects
 
 import "./components"
 
@@ -46,7 +47,8 @@ TpPage {
 
     ColumnLayout {
         layoutDirection: Qt.RightToLeft
-        anchors.fill: parent
+        // anchors.fill: parent
+        width: root.width
         spacing: 10
 
         GridLayout {
@@ -87,63 +89,37 @@ TpPage {
         ScrollView {
             id: adScroll
             Layout.fillWidth: true
-            Layout.maximumHeight: 200
-            height: 200
+            Layout.maximumHeight: 180
+            height: 180
             // ScrollBar.horizontal.policy: ScrollBar.AlwaysOn
             clip: true
 
-            background: Rectangle {
-                anchors.fill: parent
-                color: 'yellow'
-            }
+            // background: Rectangle {
+            //     anchors.fill: parent
+            //     color: 'yellow'
+            // }
 
             ListView {
                 model: adsModel
                 orientation: Qt.Horizontal
                 layoutDirection: Qt.RightToLeft
-                delegate:  ItemDelegate {
+                delegate: ItemDelegate {
                     width: 360
-                    height: 200
+                    height: adScroll.height
                     hoverEnabled: false
-                    Rectangle {
-                        id: adItem
+                    enabled: false
+
+                    AdBox {
                         anchors.fill: parent
-                        anchors.margins: 10
-                        radius: 15
-                        color: model['bg-color']
-                        clip: true
-
-                        RowLayout {
-                            anchors.fill: parent
-                            layoutDirection: Qt.RightToLeft
-                            clip: true
-                            ColumnLayout {
-                                layoutDirection: Qt.RightToLeft
-                                Layout.alignment: Qt.AlignTop
-                                Layout.margins: 15
-
-                                TpLabel {
-                                    text: model['title']
-                                    color: model['fg-color']
-                                    font.pointSize: 12
-                                    font.weight: Font.DemiBold
-                                    lineHeight: 1.1
-                                }
-                                TpLabel {
-                                    text: model['sub-title']
-                                    color: model['fg-color']
-                                    font.weight: Font.Normal
-                                }
-                            }
-
-                            Item { Layout.fillWidth: true }
-
-                            Image {
-                                source: model["image"]
-                                sourceSize: Qt.size(adItem.height, adItem.height)
-                                fillMode: Image.PreserveAspectCrop
-                            }
-                        }
+                        title: model['title']
+                        subTitle: model['sub-title']
+                        foregroundColor: model["fg-color"]
+                        backgroundColor: model["bg-color"]
+                        image: model["image"]
+                        actionUrl: model["action"]
+                        actionTitle: model["action-title"]
+                        actionColor: model["action-fg"] ?? model["fg-color"]
+                        actionBackground: model["action-bg"]
                     }
                 }
             }
@@ -163,48 +139,20 @@ TpPage {
                     //             0 :
                     //             loc > (adScroll.contentWidth - adScroll.contentItem.width) ?
                     //                 adScroll.contentWidth - adScroll.contentItem.width : loc
-
-                    adScroll.contentItem.contentX = loc < - adScroll.contentWidth
-                            ? - adScroll.contentWidth
-                            : loc > -adScroll.contentItem.width ? -adScroll.contentItem.width : loc
+                    adScroll.contentItem.contentX = loc < -adScroll.contentWidth
+                            ? -adScroll.contentWidth
+                            : loc > -adScroll.contentItem.width
+                              ? -adScroll.contentItem.width : loc
 
                     e.accepted = true
                 }
             }
         }
 
-        // ScrollView {
-        //     width: parent.width
-        //     height: 100
-        //     ScrollBar.vertical.policy: ScrollBar.AlwaysOn
-
-        //         ListView {
-        //             model: 20
-        //             delegate: ItemDelegate {
-        //                 text: "Item " + index
-
-        //                 required property int index
-        //             }
-        //         }
-
-        //     // ListView {
-        //     //     layoutDirection: Qt.RightToLeft
-        //     //     // anchors.fill: parent
-        //     //     model: adsModel
-        //     //     delegate: ItemDelegate {
-        //     //         Rectangle {
-        //     //             width: 360
-        //     //             height: 300
-        //     //             // color: model.background
-        //     //             // color: 'red'
-        //     //             border.color: 'red'
-        //     //             anchors.margins: 10
-        //     //         }
-        //     //     }
-        //     // }
-        // }
         Item {
             Layout.fillHeight: true
         }
+
     }
+
 }
