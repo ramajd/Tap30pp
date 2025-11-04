@@ -13,7 +13,7 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-        color: "#DDD6FE"
+        color: adData.background
     }
 
     MouseArea {
@@ -37,19 +37,19 @@ Item {
                 text: adData.title
                 font.weight: Font.DemiBold
                 font.pointSize: 12
-                color: "#4C1D95"
+                color: adData.foreground
             }
             TpLabel {
                 text: adData.subTitle
-                font.weight: Font.Medium
-                color: "#704BAF"
+                font.weight: Font.Normal
+                color: adData.foreground
             }
 
             Rectangle {
                 Text {
                     id: actionTitle
                     text: adData.actionTitle + " \u2190"
-                    color: "#4C1D95"
+                    color: adData.foreground
                     font.weight: Font.DemiBold
                     Layout.margins: 20
                     anchors.centerIn: parent

@@ -13,6 +13,8 @@ class AdItem : public QObject
     Q_PROPERTY(QUrl image READ image WRITE setImage NOTIFY imageChanged FINAL)
     Q_PROPERTY(QUrl action READ action WRITE setAction NOTIFY actionChanged FINAL)
     Q_PROPERTY(QString actionTitle READ actionTitle WRITE setActionTitle NOTIFY actionTitleChanged FINAL)
+    Q_PROPERTY(QString foreground READ foreground WRITE setForeground NOTIFY foregroundChanged FINAL)
+    Q_PROPERTY(QString background READ background WRITE setBackground NOTIFY backgroundChanged FINAL)
 
 public:
     explicit AdItem(QObject *parent = nullptr);
@@ -32,6 +34,11 @@ public:
     QString actionTitle() const;
     void setActionTitle(const QString& title);
 
+    QString foreground() const;
+    void setForeground(const QString& foreground);
+
+    QString background() const;
+    void setBackground(const QString& background);
 
 signals:
     void titleChanged(const QString& title);
@@ -39,6 +46,8 @@ signals:
     void imageChanged(const QUrl& url);
     void actionChanged(const QUrl& url);
     void actionTitleChanged(const QString& title);
+    void foregroundChanged(const QString& color);
+    void backgroundChanged(const QString& color);
 
 private:
     QString m_title;
@@ -46,6 +55,8 @@ private:
     QUrl m_image;
     QUrl m_action;
     QString m_actionTitle;
+    QString m_foreground;
+    QString m_background;
 };
 
 #endif // ADITEM_H

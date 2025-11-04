@@ -3,11 +3,11 @@
         "header": {
             "title": "تا ۲ میلیون تومان اعتبار!",
             "sub-title": "تپسی بگیر\nسر ماه با دیجی‌پی پرداخت کن",
+            "fg-color": "#4C1D95",
+            "bg-color": "#DDD6FE",
             "image": "qrc:/assets/ad.png",
-            "action": {
-                "title": "دریافت اعتبار",
-                "url": "https://app.tapsi.cab/products/bnpl"
-            }
+            "action": "https://app.tapsi.cab/products/bnpl",
+            "action-title": "دریافت اعتبار"
         },
         "top-menu": [
             { "title": "درخواست تپسی", "src": "qrc:/assets/ride-request.png", "badge": "جایزه آیفون" },
@@ -23,6 +23,27 @@
             { "title": "خدمات خودرو", "src": "qrc:/assets/garage_tile.png", "badge": "خرید قسطی" },
             { "title": "بین شهری", "src": "qrc:/assets/intercity.png" },
             { "title": "ثبت نام راننده", "src": "qrc:/assets/become-a-driver.png" }
+        ],
+        "ads": [
+            {
+                "title": "با ۹۵ هزار تومان\nاشتراک فیلم‌نت بگیر",
+                "sub-title": "با کد تخفیف: BERETTA50",
+                "fg-color": "#000000",
+                "bg-color": "#D6D3D1",
+                "image": "qrc:/assets/ad1.png",
+                "action": "",
+                "action-title": ""
+            },
+            {
+                "title": "تا ۲ میلیون تومان اعتبار!",
+                "sub-title": "تپسی بگیر\nسر ماه با دیجی‌پی پرداخت کن",
+                "fg-color": "#4C1D95",
+                "bg-color": "#DDD6FE",
+                "image": "qrc:/assets/ad.png",
+                "action": "qrc:/assets/ad.png",
+                "action1": "https://app.tapsi.cab/products/bnpl",
+                "action-title": "دریافت اعتبار"
+            }
         ]
     }
 }

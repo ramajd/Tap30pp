@@ -26,9 +26,11 @@ AdItem::AdItem(QObject *parent)
             setTitle(ad.value("title").toString());
             setSubTitle(ad.value("sub-title").toString());
             setImage(ad.value("image").toString());
-            auto action = ad.value("action").toObject();
-            setAction(action.value("url").toString());
-            setActionTitle(action.value("title").toString());
+            // auto action = ad.value("action").toObject();
+            setAction(ad.value("action").toString());
+            setActionTitle(ad.value("action-title").toString());
+            setForeground(ad.value("fg-color").toString());
+            setBackground(ad.value("bg-color").toString());
         }
     }
 }
@@ -95,5 +97,31 @@ void AdItem::setActionTitle(const QString &title)
     if (m_actionTitle != title) {
         m_actionTitle = title;
         Q_EMIT actionTitleChanged(title);
+    }
+}
+
+QString AdItem::foreground() const
+{
+    return m_foreground;
+}
+
+void AdItem::setForeground(const QString &foreground)
+{
+    if (m_foreground != foreground) {
+        m_foreground = foreground;
+        Q_EMIT foregroundChanged(foreground);
+    }
+}
+
+QString AdItem::background() const
+{
+    return m_background;
+}
+
+void AdItem::setBackground(const QString &background)
+{
+    if (m_background != background) {
+        m_background = background;
+        Q_EMIT backgroundChanged(background);
     }
 }
