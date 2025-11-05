@@ -9,6 +9,8 @@ import "./components"
 TpPage {
     id: root
 
+
+
     Component.onCompleted: {
         const xhr = new XMLHttpRequest()
         xhr.open("GET", "qrc:/data.json")
@@ -30,6 +32,15 @@ TpPage {
                                      })
             adsModel.clear()
             homeData["ads"].forEach(ad => adsModel.append(ad))
+
+            offersPanel.title = homeData["offerbox"]["title"]
+            offersPanel.countDown = {
+                h: homeData["offerbox"]["countdown"]["h"],
+                m: homeData["offerbox"]["countdown"]["m"],
+                s: homeData["offerbox"]["countdown"]["s"],
+            }
+            offersModel.clear()
+            homeData["offerbox"]["offers"].forEach(offer => offersModel.append(offer))
         }
     }
 
@@ -41,6 +52,9 @@ TpPage {
     }
     ListModel {
         id: adsModel
+    }
+    ListModel {
+        id: offersModel
     }
 
     header: AdItemView {}
@@ -84,6 +98,110 @@ TpPage {
                     badge: model.badge ? model.badge : ""
                 }
             }
+        }
+
+
+        Rectangle {
+            id: offersPanel
+
+            property alias title: offersTitle.text
+            property var countDown: {'h': 0, 'm': 0, 's': 0}
+
+            Layout.fillWidth: true
+            Layout.maximumHeight: 200
+            height: 200
+            // clip: true
+
+            gradient: Gradient {
+                GradientStop { position: 0.0; color: '#FFF' }
+                GradientStop { position: 1.0; color: '#ADDEC9' }
+            }
+
+            ColumnLayout {
+                Layout.fillWidth: true
+                anchors.fill: parent
+                anchors.margins: 16
+                layoutDirection: Qt.RightToLeft
+
+                RowLayout {
+                    layoutDirection: Qt.RightToLeft
+                    Layout.fillWidth: true
+
+
+                    Label {
+                        id: offersTitle
+                        text: "offers"
+                        font.weight: Font.Medium
+                        font.pointSize: 12
+                        Layout.alignment: Qt.AlignVCenter
+                    }
+                    Item { Layout.fillWidth: true }
+
+                    TpCountDown {
+                        hour: offersPanel.countDown['h']
+                        minute: offersPanel.countDown['m']
+                        second: offersPanel.countDown['s']
+                        Layout.alignment: Qt.AlignVCenter
+                    }
+                }
+
+                TpHScrollView {
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+
+                    ListView {
+                        model: offersModel
+                        orientation: Qt.Horizontal
+                        layoutDirection: Qt.RightToLeft
+                        anchors.fill: parent
+                        spacing: 2
+                        delegate: ItemDelegate {
+                            width: 100
+                            height: 100
+                            Rectangle {
+                                color: '#FFF'
+                                anchors.fill: parent
+                                anchors.margins: 10
+                                Text { text: index }
+                            }
+                        }
+                    }
+
+                }
+
+                // ScrollView {
+                //     Layout.fillWidth: true
+                //     Layout.fillHeight: true
+                //     clip: true
+                //     background: Rectangle {
+                //         anchors.fill: parent
+                //         color: 'yellow'
+                //     }
+                //     ListView {
+                //         model: offersModel
+                //         orientation: Qt.Horizontal
+                //         layoutDirection: Qt.RightToLeft
+                //         anchors.fill: parent
+                //         spacing: 2
+                //         delegate: ItemDelegate {
+                //             width: 100
+                //             height: 100
+                //             Rectangle {
+                //                 color: '#FFF'
+                //                 anchors.fill: parent
+                //                 anchors.margins: 10
+                //                 Text { text: index }
+                //             }
+                //         }
+                //     }
+                // }
+
+
+                // Item { Layout.fillHeight: true }
+            }
+
+
+
         }
 
         ScrollView {

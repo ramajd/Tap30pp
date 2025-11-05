@@ -24,6 +24,19 @@
             { "title": "بین شهری", "src": "qrc:/assets/intercity.png" },
             { "title": "ثبت نام راننده", "src": "qrc:/assets/become-a-driver.png" }
         ],
+        "offerbox": {
+            "title": "تخفیف سکه و شمش طلا",
+            "countdown": {
+                "h": 2, "m": 10, "s": 12
+            },
+            "offers": [
+                { "image": "qrc:/assets/promotion1.jpg", "title": "شمش طلا پارس...", "price": "۲۹۶,۶۱۰,۰۰۰", "old-price": "۳۰۲,۵۴۲,۲۰۰", "off": "۲%" },
+                { "image": "qrc:/assets/promotion2.jpg", "title": "طلای آب شده 7...", "price": "۲۸,۶۲۰,۰۰۰", "old-price": "۲۸,۷۵۵,۶۰۰", "off": "۱%" },
+                { "image": "qrc:/assets/promotion3.jpg", "title": "آویز شمش دلار ...", "price": "۱۳,۲۸۹,۷۷۰", "old-price": "۱۴,۲۹۰,۰۸۰", "off": "۷%" },
+                { "image": "qrc:/assets/promotion4.jpg", "title": "ربع سکه طلا بها...", "price": "۲۷,۵۰۰,۰۰۰", "old-price": "", "off": "" },
+                { "image": "qrc:/assets/promotion5.jpg", "title": "نیم سکه طلا بها...", "price": "۶۰,۱۷۲,۶۰۰", "old-price": "", "off": "" }
+            ]
+        },
         "ads": [
             {
                 "title": "٪۶۰ تخفیف ویژه",
