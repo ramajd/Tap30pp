@@ -21,6 +21,7 @@ ScrollView {
         id: view
         layoutDirection: rtl ? Qt.RightToLeft : Qt.LeftToRight
         orientation: Qt.Horizontal
+        spacing: 8
     }
 
     WheelHandler {

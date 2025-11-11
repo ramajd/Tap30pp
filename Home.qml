@@ -37,9 +37,10 @@ TpPage {
                 "m": homeData["offerbox"]["countdown"]["m"],
                 "s": homeData["offerbox"]["countdown"]["s"]
             }
-            offersModel.clear()
-            homeData["offerbox"]["offers"].forEach(
-                offer => offersModel.append(offer))
+            offersPanel.model.clear()
+            homeData["offerbox"]["offers"].forEach(offer => offersPanel.model.append(offer))
+            // offersModel.clear()
+            // homeData["offerbox"]["offers"].forEach(offer => offersModel.append(offer))
         }
     }
 
@@ -52,9 +53,7 @@ TpPage {
     ListModel {
         id: adsModel
     }
-    ListModel {
-        id: offersModel
-    }
+
 
     header: AdItemView {}
 
@@ -99,84 +98,11 @@ TpPage {
             }
         }
 
-        Rectangle {
+        OfferPanel {
             id: offersPanel
-
-            property alias title: offersTitle.text
-            property var countDown: {
-                "h": 0,
-                "m": 0,
-                "s": 0
-            }
-
             Layout.fillWidth: true
-            Layout.maximumHeight: 200
-            height: 200
-
-            // clip: true
-            gradient: Gradient {
-                GradientStop {
-                    position: 0.0
-                    color: '#FFF'
-                }
-                GradientStop {
-                    position: 1.0
-                    color: '#ADDEC9'
-                }
-            }
-
-            ColumnLayout {
-                Layout.fillWidth: true
-                anchors.fill: parent
-                anchors.margins: 16
-                layoutDirection: Qt.RightToLeft
-
-                RowLayout {
-                    layoutDirection: Qt.RightToLeft
-                    Layout.fillWidth: true
-
-                    Label {
-                        id: offersTitle
-                        text: "offers"
-                        font.weight: Font.Medium
-                        font.pointSize: 12
-                        Layout.alignment: Qt.AlignVCenter
-                    }
-                    Item {
-                        Layout.fillWidth: true
-                    }
-
-                    TpCountDown {
-                        hour: offersPanel.countDown['h']
-                        minute: offersPanel.countDown['m']
-                        second: offersPanel.countDown['s']
-                        Layout.alignment: Qt.AlignVCenter
-                    }
-                }
-
-                TpHScrollView {
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-
-                    Component.onCompleted: print("TPH: " + width)
-
-                    rtl: true
-                    model: 10
-                    delegate: ItemDelegate {
-                        width: 100
-                        height: 100
-                        Rectangle {
-                            color: '#FFF'
-                            anchors.fill: parent
-                            anchors.margins: 10
-                            Text {
-                                text: index
-                            }
-                        }
-                    }
-                }
-            }
         }
+
 
         TpHScrollView {
             id: adScroll
